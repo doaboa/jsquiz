@@ -48,3 +48,47 @@ for(i=0; i < incomes.length; i++) {
 }
 document.write('<tr><td>Total:</td><td>$' + total_income + '</td></tr></table></center>')
 // document.write('<p>Your sources of income are ' +resulting_income_description + ' Your total income is $' +total_income + '</p>');
+
+
+
+//DAY TWO
+
+document.write('<p>If you can see this, your quiz script is set up!</p>');
+console.log("Hello, welcome to Quizzical");
+
+//NAME AND EMAIL LISTER
+
+nameAndEmail = 'blah';
+while (nameAndEmail != "") {
+  nameAndEmail = prompt("What is your name and email?");
+  person = {};
+  person['name']= nameAndEmail.split(', ')[0];
+  person['email']= nameAndEmail.split(', ')[1];
+  document.write("<a href='mailto:" + person.email + "'>" + person.name + "</a><br/>");
+}
+
+//CALCULATOR
+
+sum = function(a, b) {
+  return a + b;
+}
+
+sub = function(a,b) {
+  return a - b;
+}
+
+mul = function(a,b) {
+  return a * b;
+}
+
+div = function(a,b) {
+  return a / b;
+}
+
+function calculator(operator) {
+  result = arguments[1];
+  for(i=2; i<arguments.length; i++) {
+    result = operator(result,arguments[i]);
+  }
+  return result;
+}
